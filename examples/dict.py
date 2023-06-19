@@ -17,7 +17,7 @@ print(phone)  # 返回 None（若是交互式命令行，则不显示 None）
 
 
 # 判断 key 是否存在
-if 'name' in person: # 返回 True or False
+if 'name' in person:  # 返回 True or False
     print('name is in person')
 else:
     print('name is not in person')
