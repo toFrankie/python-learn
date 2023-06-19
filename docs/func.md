@@ -3,7 +3,7 @@
 在 Python 中内置了很多函数，可以在 [Built-in Functions](https://docs.python.org/3/library/functions.html#built-in-functions) 中查看。
 
 - 函数参数分为必选参数、可选参数（表示设置了参数默认值），在调用函数时要注意传参数量：一是不能超过函数参数总数，二是不小于必选参数的数量，否则会抛出 TypeError。其中 `min()` 和 `max()` 可以接收任意多个参数。
--
+- 在 Python 中定义函数，可以用必选参数、默认参数、可变参数、关键字参数和命名关键字参数，这 5 种参数都可以组合使用。但是请注意，参数定义的顺序必须是：必选参数、默认参数、可变参数、命名关键字参数和关键字参数。
 
 ## 函数定义
 
@@ -112,6 +112,42 @@ calc(1, 3, 5, 7) # 84
 如果入参值本身就是一个 list 或 tuple 呢，可以这样 `calc(*[1, 2])`。
 
 没错，像极了 JavaScript 中的 Rest Parameters 和 Spread Syntax。
+
+#### 关键字参数
+
+```py
+def person(name, age, **kw):
+    print('name:', name, 'age:', age, 'other:', kw)
+
+person('Bob', 35, city='Beijing') # name: Bob age: 35 other: {'city': 'Beijing'}
+person('Adam', 45, gender='M', job='Engineer') # name: Adam age: 45 other: {'gender': 'M', 'job': 'Engineer'}
+```
+
+作用就是把一些非必要的参数组成一个 dict。
+
+#### 命名关键字参数
+
+对于前面关键字参数，如果我们希望检查 `city` 和 `job` 参数，可以利用 `in` 关键字处理：
+
+```py
+def person(name, age, **kw):
+    if 'city' in kw:
+        # 有city参数
+        pass
+    if 'job' in kw:
+        # 有job参数
+        pass
+    print('name:', name, 'age:', age, 'other:', kw)
+```
+
+但如果我们要限制 `kw` 里最多只有 `city` 和 `job`，可以使用命名关键字参数：
+
+```py
+def person(name, age, *, city, job):
+    print(name, age, city, job)
+```
+
+命名关键字参数需要一个特殊分隔符 `*`，`*` 后面的参数被视为命名关键字参数。
 
 #### 空函数
 
