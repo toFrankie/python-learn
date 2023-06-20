@@ -1,4 +1,4 @@
-## 基础
+# 基础
 
 ## 输入与输出
 
@@ -47,7 +47,7 @@ Python 语法采用缩进的方式，但没有规定缩进是几个 Space 还是
 - JavaScript 中的 `&&`、`||`、`!`，在 Python 中用 `and`、`or`、`not` 表示。比如：`not 1 > 2` 结果为 `True`。
 - 可以把任意数据类型赋值给变量，同一个变量可以反复赋值，而且可以是不同类型的变量。与 JavaScript 类似，是动态语言。
 - 在 Python 中没有 `===` 全等比较，而 `==` 与 JavaScript 类似，也会尝试转换类型。若要全等比较，可以用 `is`，会检查类型、地址和值。
-- 在 JavaScript 中获取数组、字符串长度时，是采用 `xxx.length` 形式，而 Python 中使用 `len() `方法获取。
+- 在 JavaScript 中获取数组、字符串长度时，是采用 `xxx.length` 形式，而 Python 中使用 `len()` 方法获取。
 - 对于数组类型，若索引超出范围，会抛出 IndexError。
 - 对于元组类型，若是空元组，用 `t = ()` 表示；若只有一项，需表示为 `t = (1,)`，而 `t = (1)` 会被认为是表达式，变量 `t` 是一个整数类型。
 - 对于元组类型的「不可变」，指的是每项元素指向不变。比如元组中某项是一个数组，其实是可以修改数组某个值的，因为数组指向没有发生改变。
@@ -110,10 +110,10 @@ primes = {2, 3, 5, 7, 11}  # 素数集合
 ## 类型转换
 
 ```py
-int(x)    # 转换成整数
+int(x)  # 转换成整数
 float(x)  # 转换成浮点数
-str(x)    # 转换成字符串
-bool(x)   # 转换成布尔值
+str(x)  # 转换成字符串
+bool(x)  # 转换成布尔值
 ```
 
 类似 JavaScript 中的 `String()`、`Boolean()` 等方法。
@@ -126,11 +126,11 @@ bool(x)   # 转换成布尔值
 age = 18
 
 if age >= 18:
-  print('成年人')
+    print('成年人')
 elif age > 6:
-  print('青少年')
+    print('青少年')
 else:
-  print('儿童')
+    print('儿童')
 ```
 
 > 注意，条件后面的冒号 `:` 不能省略，后面缩进表示代码块。
@@ -164,9 +164,8 @@ while count < 5:
 
 # 快速创建新数组
 numbers = [1, 2, 3, 4, 5]
-squared_numbers = [num ** 2 for num in numbers]
+squared_numbers = [num**2 for num in numbers]
 print(squared_numbers)  # 输出: [1, 4, 9, 16, 25]
-
 ```
 
 `break` 和 `continue` 跟 JavaScript 一致。
